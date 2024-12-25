@@ -1,0 +1,137 @@
+
+[[main]]
+  name = "Docs"
+  pageRef = "/docs/"
+  weight = 10
+
+[[main]]
+  name = "Device Support"
+  pageRef = "/device-support/"
+  weight = 20
+
+[[main]]
+  name = "About"
+  pageRef = "/about/"
+  weight = 30
+
+
+[[main]]
+  name = "Discussions"
+  pre = "fa fa-comments"
+  url = "https://passkeys.dev/discuss"
+  weight = 110
+  [main.params]
+    icon = true
+
+
+[[main]]
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/passkeydeveloper"
+  weight = 120
+  [main.params]
+    icon = true
+
+[[main]]
+  name = "Bluesky"
+  pre = "fab fa-bluesky"
+  url = "https://bsky.app/profile/passkeys.dev"
+  weight = 140
+  [main.params]
+    icon = true    
+
+[[main]]
+  name = "Mastodon"
+  pre = "fab fa-mastodon"
+  url = "https://fosstodon.org/@passkeysdev"
+  weight = 140
+  [main.params]
+    icon = true    
+
+[[footer]]
+  name = "Links"
+  weight = 10
+
+[[footer]]
+  parent = "Links"
+  name = "Home"
+  pageRef = "/"
+  weight = 1
+
+[[footer]]
+  parent = "Links"
+  name = "About"
+  pageRef = "/docs/about/credits/"
+  weight = 10
+  [footer.params]
+    alias = true
+
+[[footer]]
+  parent = "Links"
+  name = "Docs"
+  pageRef = "/docs/"
+  weight = 20
+
+[[footer]]
+  parent = "Links"
+  name = "Components"
+  pageRef = "/docs/components/"
+  weight = 30
+  [footer.params]
+    alias = true
+
+[[footer]]
+  parent = "Links"
+  name = "Releases"
+  pageRef = "/releases/"
+  weight = 40
+
+[[footer]]
+  name = "Guides"
+  weight = 20
+
+[[footer]]
+  parent = "Guides"
+  name = "Getting started"
+  pageRef = "/guides/editing"
+  weight = 10
+
+[[footer]]
+  parent = "Guides"
+  name = "Developing modules"
+  pageRef = "/guides/modules"
+  weight = 20
+
+[[footer]]
+  parent = "Guides"
+  name = "Optimization"
+  pageRef = "/guides/optimization"
+  weight = 30
+
+[[footer]]
+  parent = "Guides"
+  name = "Versioning"
+  pageRef = "/guides/versioning"
+  weight = 40
+
+[[footer]]
+  name = "Community"
+  weight = 30
+
+[[footer]]
+  parent = "Community"
+  name = "Issues"
+  url = "https://github.com/gethinode/hinode/issues"
+  weight = 10
+
+[[footer]]
+  parent = "Community"
+  name = "Discussions"
+  url = "https://github.com/gethinode/hinode/discussions"
+  weight = 20
+
+[[footer]]
+  parent = "Community"
+  name = "Contribute"
+  pageRef = "/docs/getting-started/contribute/"
+  weight = 30

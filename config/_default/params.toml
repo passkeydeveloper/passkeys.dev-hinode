@@ -1,0 +1,55 @@
+[main]
+
+[main.externalLinks]
+    cue = false
+    tab = true
+
+[navigation]
+    logo = "img/pdd-logo-color-nopad-light.svg"
+    title = "passkeys.dev"
+    breadcrumb = false
+    toc = true
+    sidebar = true
+    fixed = true
+
+[footer]
+    license = '<a href="about/#copyright-and-attributions">CC BY-NC-ND 4.0</a>'
+    description = 'This site is brought to you by members of the <a href="https://www.w3.org/community/webauthn-adoption/" target="_blank">W3C WebAuthn Community Adoption Group</a> and the <a href="https://fidoalliance.org/" target="_blank">FIDO Alliance.</a>'
+
+[sharing]
+    enabled = true
+    sort = "weight"
+    reverse = false
+    webshare = true
+
+[[sharing.providers]]
+    name = "link"
+    url = "{url}"
+    icon = "fas link"
+    weight = 10
+    clipboard = true
+
+[[sharing.providers]]
+    name = "Bluesky"
+    url = "https://bsky.app/intent/compose?text={url}"
+    icon = "fab bluesky"
+    weight = 20
+
+[[sharing.providers]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/sharing/share-offsite/?url={url}"
+    icon = "fab linkedin"
+    weight = 30
+
+[[sharing.providers]]
+    name = "Threads"
+    url = "https://www.threads.net/intent/post?text={url}"
+    icon = "fab threads"
+    weight = 40
+
+[[sharing.providers]]
+    name = "WhatsApp"
+    url = "whatsapp://send?text={title}%20{url}"
+    icon = "fab whatsapp"
+    weight = 50
+
