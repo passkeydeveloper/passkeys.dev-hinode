@@ -25,7 +25,7 @@ A [Relying Party (RP)](#relying-party-rp) authenticates a user without any prior
 
 Attestation is an optional statement provided by an authenticator which can be used by a Relying Party to identify and verify the provenance of the authenticator.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/2021/REC-webauthn-2-20210408/#sctn-attestation)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/2021/REC-webauthn-2-20210408/#sctn-attestation" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## Authentication factor
 
@@ -37,15 +37,15 @@ A privacy preserving list UI element that is rendered by the browser (or the OS 
 
 This UI element provides a list of passkeys that are available for the [Relying Party (RP)](#relying-party-rp) on the local device, and may also provide an option to kick off [Cross-Device Authentication (CDA)](#cross-device-authentication-cda) or use a FIDO2 security key.
 
-A generic example of an autofill UI for passkeys is shown below:
-
-![Image](pkdd-signin-username-autofill.png "Sample sign in screen with the autofill UI rendered under the username field, showing a passkey for bob@example.com, an other accounts option and a passkey from another device option")
+{{< image src="pkdd-signin-username-autofill.png" class="col-10 col-md-7" wrapper="text-center" caption="A generic example of an autofill UI for passkeys" title="Sample sign in screen with the autofill UI rendered under the username field, showing a passkey for bob@example.com, an other accounts option and a passkey from another device option">}}
 
 The technical name for this feature in the WebAuthn and Credential Management specifications is "Conditional Mediation".
 
-[WebAuthn Spec Reference](https://w3c.github.io/webauthn/#dom-publickeycredential-isconditionalmediationavailable)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://w3c.github.io/webauthn/#dom-publickeycredential-isconditionalmediationavailable" >}}WebAuthn Spec Reference{{< /button >}}
 
-[Credential Management Spec Reference](https://w3c.github.io/webappsec-credential-management/#mediation-requirements)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the Credential Management specification" href="https://w3c.github.io/webappsec-credential-management/#mediation-requirements">}}
+   Credential Management Spec Reference
+{{< /button >}}
 
 ## Cross-Device Authentication (CDA)
 
@@ -79,7 +79,7 @@ A Discoverable Credential (known in previous version of WebAuthn as a "resident 
 
 [Passkeys](#passkey) are Discoverable Credentials.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#discoverable-credential)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#discoverable-credential" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## First-Party Passkey Provider
 
@@ -121,15 +121,13 @@ The informal name for creating a relationship between a [Cross-Device Authentica
 
 Both the client and authenticator must support the functionality.
 
-Example with an Android phone linked to a Windows 11 device:
-
-![Image captions](pkdd-terms-cda-pl-androidwin.png "A screenshot of the Windows Hello prompt asking the user to choose where to save their new passkey. The list of options includes an entry with a phone icon titled cappy-p7p as an example of a phone that has been persistently linked to the access device the user is current registering a new passkey from.")
+{{< image src="pkdd-terms-cda-pl-androidwin.png" class="col-10 col-md-7" wrapper="text-center" caption="Example with an Android phone linked to a Windows 11 device" title="A screenshot of the Windows Hello prompt asking the user to choose where to save their new passkey. The list of options includes an entry with a phone icon titled cappy-p7p as an example of a phone that has been persistently linked to the access device the user is current registering a new passkey from.">}}
 
 ## Platform authenticator
 
 A FIDO authenticator that is built-in to a user's device.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#sctn-authenticator-taxonomy)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#sctn-authenticator-taxonomy" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## Reauthentication
 
@@ -141,13 +139,13 @@ For example, this can happen before making sensitive changes to an account (addi
 
 The website that is trying to ascertain and verify the identity of the user or perform FIDO authentication.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#webauthn-relying-party)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#webauthn-relying-party" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## Roaming authenticator
 
 A FIDO authenticator usable with any device the user is trying to sign-in from. Roaming authenticators attach to users' devices in using USB, NFC, and/or Bluetooth. These authenticators are often referred to as "security keys". A smartphone can also act as a roaming authenticator using [FIDO Cross-Device Authentication](#cross-device-authentication-cda).
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#sctn-authenticator-taxonomy)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#sctn-authenticator-taxonomy" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## Signing in
 
@@ -171,16 +169,16 @@ A [Passkey Provider](#passkey-provider) that plugs in to the OS via platform API
 
 A test of User Presence (UP) is used to ensure the user is in local proximity to the authenticator during an authentication or credential creation ceremony. UP is often satisfied by pressing a button or metallic area of a security key, or interacting with a platform authenticator on a device.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#test-of-user-presence)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#test-of-user-presence" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## User Verification (UV)
 
 User Verification (UV) requires the user to either perform a biometric gesture, enter the device PIN, or enter the device password for the authenticator to authorize creation and/or use of the credential.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#user-verification)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#user-verification" >}}WebAuthn Spec Reference{{< /button >}}
 
 ## User-Verifying Roaming Authenticator
 
 A User-Verifying Roaming Authentication (UVRA), also known as a first-factor roaming authenticator, can [verify individual](#user-verification-uv) users through the use of biometrics, or through the user entering a device PIN. An important class of UVRAs are smartphones, in which case the “attachment” typically happens over a wireless connection.
 
-[WebAuthn Spec Reference](https://www.w3.org/TR/webauthn-2/#first-factor-roaming-authenticator)
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://www.w3.org/TR/webauthn-2/#first-factor-roaming-authenticator" >}}WebAuthn Spec Reference{{< /button >}}

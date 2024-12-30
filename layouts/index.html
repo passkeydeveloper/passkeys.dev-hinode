@@ -1,0 +1,42 @@
+{{ define "main" -}}
+{{- $breakpoint := $.Scratch.Get "breakpoint" -}}
+
+
+<div class="container-xxl flex-fill p-4 px-xxl-0">
+  <div class="row row-cols-1 row-cols-{{ $breakpoint.current }}-2">
+    <div class="col col-{{ $breakpoint.prev }}-12 col-{{ $breakpoint.current }}-12">
+      {{- $metadata := "full" -}}
+      {{ if isset .Params "metadata" }}
+      {{ $metadata = .Params.metadata }}
+      {{ else }}
+      {{- with (index site.Params.pages .Type ) -}}
+      {{ if isset . "metadata" }}{{ $metadata = (index . "metadata") }}{{ end }}
+      {{- end -}}
+      {{ end }}
+
+      {{- $supportedStates := slice "full" "original" "none" -}}
+      {{- if not (in $supportedStates $metadata) -}}
+      {{- errorf "layout [_default/single/header.html] - Invalid value for param 'metadata': %s" $metadata -}}
+      {{- end -}}
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+
+          <img alt="passkey icon" src="img/logos/pdd-icon-color-simple.svg" width="25%" />
+
+          {{ with .Title }}<p class="display-4 mt-2 fw-bold">{{ . }}</p>{{ end }}
+          <div class="mt-4">
+            <p class="display-6 mt-0">Hello passkeys!<br>Goodbye passwords.</p>
+            <a aria-label="Get started" href="docs/intro/what-are-passkeys/" class="btn btn-primary position-relative"
+              role="button">
+              <span class="d-flex justify-content-center">
+                <span class="my-auto fw-bolder">Get Started</span>
+              </span></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end -}}

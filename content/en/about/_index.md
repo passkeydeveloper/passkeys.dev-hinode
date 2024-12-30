@@ -11,6 +11,7 @@ passkeys.dev is brought to you by members of the [W3C WebAuthn Community Adoptio
 
 {{< card-group padding="3" gutter="3" wrapper="mt-4 mb-4" cols="2">}}
     {{< card title="Ask & Discuss" icon="fa fa-comments" >}}
+
 - [W3C WebAuthn Community Adoption Group](https://www.w3.org/community/webauthn-adoption/)
 - [Passkeys Developer Discussions (passkeys.dev/discuss)](https://passkeys.dev/discuss)
     {{< /card >}}
@@ -30,7 +31,7 @@ Contributing guidance coming soon!
 
 ## Maintainers
 
-Tim Cappalli 
+Tim Cappalli
 [{{< fab fa-github >}}](https://github.com/timcappalli)
 [{{< fab fa-mastodon >}}](https://infosec.exchange/@timcappalli)
 [{{< fas fa-at >}}](https://www.threads.net/@timcappalli)

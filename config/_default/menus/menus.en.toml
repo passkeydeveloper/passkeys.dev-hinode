@@ -14,7 +14,6 @@
   pageRef = "/about/"
   weight = 30
 
-
 [[main]]
   name = "Discussions"
   pre = "fa fa-comments"
@@ -54,84 +53,40 @@
 
 [[footer]]
   parent = "Links"
-  name = "Home"
-  pageRef = "/"
+  name = "Docs"
+  pageRef = "/docs/"
   weight = 1
 
 [[footer]]
   parent = "Links"
   name = "About"
-  pageRef = "/docs/about/credits/"
-  weight = 10
-  [footer.params]
-    alias = true
-
-[[footer]]
-  parent = "Links"
-  name = "Docs"
-  pageRef = "/docs/"
-  weight = 20
-
-[[footer]]
-  parent = "Links"
-  name = "Components"
-  pageRef = "/docs/components/"
-  weight = 30
-  [footer.params]
-    alias = true
-
-[[footer]]
-  parent = "Links"
-  name = "Releases"
-  pageRef = "/releases/"
-  weight = 40
-
-[[footer]]
-  name = "Guides"
-  weight = 20
-
-[[footer]]
-  parent = "Guides"
-  name = "Getting started"
-  pageRef = "/guides/editing"
+  pageRef = "/about/"
   weight = 10
 
 [[footer]]
-  parent = "Guides"
-  name = "Developing modules"
-  pageRef = "/guides/modules"
+  parent = "Links"
+  name = "Device Support"
+  pageRef = "/device-support/"
   weight = 20
 
 [[footer]]
-  parent = "Guides"
-  name = "Optimization"
-  pageRef = "/guides/optimization"
+  name = "Resources"
   weight = 30
 
 [[footer]]
-  parent = "Guides"
-  name = "Versioning"
-  pageRef = "/guides/versioning"
-  weight = 40
-
-[[footer]]
-  name = "Community"
-  weight = 30
-
-[[footer]]
-  parent = "Community"
-  name = "Issues"
-  url = "https://github.com/gethinode/hinode/issues"
+  parent = "Resources"
+  name = "Feature Detect"
+  url = "https://featuredetect.passkeys.dev"
   weight = 10
 
 [[footer]]
-  parent = "Community"
-  name = "Discussions"
-  url = "https://github.com/gethinode/hinode/discussions"
+  parent = "Resources"
+  name = "Passkey Central"
+  url = "https://passkeycentral.org"
   weight = 20
 
 [[footer]]
-  parent = "Community"
-  name = "Contribute"
-  pageRef = "/docs/getting-started/contribute/"
+  parent = "Resources"
+  name = "Developer Discussions"
+  pageRef = "https://passkeys.dev/discuss"
   weight = 30

@@ -13,7 +13,7 @@ To bootstrap an account, serve the user a sign-in page.
 
 Start off by asking the user for their account identifier, typically a username or email address:
 
-![Sample sign in screen with a username field and next button](pkdd-signin-username-next.png)
+{{< image src="pkdd-signin-username-next.png" class="col-10 col-md-7" wrapper="text-center" title="Sample sign in screen with a username field and next button">}}
 
 To support the [autofill UI](/docs/reference/terms/#autofill-ui) for passkeys, make sure to:
 
@@ -29,50 +29,54 @@ To support the [autofill UI](/docs/reference/terms/#autofill-ui) for passkeys, m
 
 2. On page load, check to see if autofill UI (conditional mediation) is available using an if statement, then call `navigator.credentials.get()` with `mediation: "conditional"` and `userVerification: "preferred"`.
 
-```html
-<script>
-  (async () => {
-    if (
-      typeof window.PublicKeyCredential !== 'undefined'
-      && typeof window.PublicKeyCredential.isConditionalMediationAvailable === 'function'
-    ) {
-      const available = await PublicKeyCredential.isConditionalMediationAvailable();
+    ```html
+    <script>
+      (async () => {
+        if (
+          typeof window.PublicKeyCredential !== 'undefined'
+          && typeof window.PublicKeyCredential.isConditionalMediationAvailable === 'function'
+        ) {
+          const available = await PublicKeyCredential.isConditionalMediationAvailable();
 
-      if (available) {
-        try {
-          // Retrieve authentication options for `navigator.credentials.get()`
-          // from your server.
-          const authOptions = await getAuthenticationOptions();
-          // This call to `navigator.credentials.get()` is "set and forget."
-          // The Promise will only resolve if the user successfully interacts
-          // with the browser's autofill UI to select a passkey.
-          const webAuthnResponse = await navigator.credentials.get({
-            mediation: "conditional",
-            publicKey: {
-              ...authOptions,
-              // see note about userVerification below
-              userVerification: "preferred",
+          if (available) {
+            try {
+              // Retrieve authentication options for `navigator.credentials.get()`
+              // from your server.
+              const authOptions = await getAuthenticationOptions();
+              // This call to `navigator.credentials.get()` is "set and forget."
+              // The Promise will only resolve if the user successfully interacts
+              // with the browser's autofill UI to select a passkey.
+              const webAuthnResponse = await navigator.credentials.get({
+                mediation: "conditional",
+                publicKey: {
+                  ...authOptions,
+                  // see note about userVerification below
+                  userVerification: "preferred",
+                }
+              });
+              // Send the response to your server for verification and
+              // authenticate the user if the response is valid.
+              await verifyAutoFillResponse(webAuthnResponse);
+            } catch (err) {
+              console.error('Error with conditional UI:', err);
             }
-          });
-          // Send the response to your server for verification and
-          // authenticate the user if the response is valid.
-          await verifyAutoFillResponse(webAuthnResponse);
-        } catch (err) {
-          console.error('Error with conditional UI:', err);
+          }
         }
-      }
-    }
-  })();
-</script>
-```
+      })();
+    </script>
+    ```
 
 This will cause the following to happen:
 
 - Retrieve the authentication options from your server. Return at least a random challenge to be associated with this authentication request.
 
-- When the user interacts with the username field, the browser and platform will check whether a passkey exists in the platform authenticator that can be used with the relying party. <br><br>If this is the case, the passkey will be presented to the user as an option to choose (along with other credentials that can be auto-filled, such as usernames stored in the browser’s password manager). The browser/platform might render a UI similar to the one shown below, although the exact look and feel will vary from platform to platform (Windows vs. Android vs. iOS), and from form factor to form factor (desktop vs. mobile):
+- When the user interacts with the username field, the browser and platform will check whether a passkey exists in the platform authenticator that can be used with the relying party
+  
+  If this is the case, the passkey will be presented to the user as an option to choose (along with other credentials that can be auto-filled, such as usernames stored in the browser’s password manager).
+  
+  The browser/platform might render a UI similar to the one shown below, although the exact look and feel will vary from platform to platform (Windows vs. Android vs. iOS), and from form factor to form factor (desktop vs. mobile):
 
-![Sample sign in screen with the autofill UI rendered under the username field, showing a passkey for bob@example.com, an other accounts option and a passkey from another device option](pkdd-signin-username-autofill.png)
+{{< image src="pkdd-signin-username-autofill.png" class="col-10 col-md-7" wrapper="text-center" title="Sample sign in screen with the autofill UI rendered under the username field, showing a passkey for bob@example.com, an other accounts option and a passkey from another device option">}}
 
 - If the user selects the passkey, the platform UI will guide the user through a (often biometrics-based) user verification check.
 
@@ -104,7 +108,7 @@ If the user used a passkey from another device (such as a phone, tablet, or FIDO
 
 In such a scenario, offer the user the choice to create a passkey on their local device. This will result in a more seamless user experience in the future, as the user will not be required to use their other device.
 
-![A sample interstitial with the title: Set up a passkey on this device, with the passkey icon to the left. Below is text that reads: Next time you sign in, would you like to use this device instead of your phone? Under that is a button that says yes and a link that says not now.](pkdd-interstitial-cdalocal.png)
+{{< image src="pkdd-interstitial-cdalocal.png" class="col-10 col-md-7" wrapper="text-center" title="A sample interstitial with the title: Set up a passkey on this device, with the passkey icon to the left. Below is text that reads: Next time you sign in, would you like to use this device instead of your phone? Under that is a button that says yes and a link that says not now.">}}
 
 ### A note about user verification
 
@@ -130,7 +134,7 @@ If passkeys are supported, this will return `true`. If they aren't supported, th
 
 Serve an opt-in or "upsell" modal/interstitial or page to the user offering them to create a passkey:
 
-![A sample interstitial with the title: Faster, safer sign-in with passkeys, with the passkey icon to the left. Below is text that reads: You can now sign into this site using your face, fingerprint, or device PIN! Under that is a button that says create a passkey and a link that says not now.](pkdd-interstitial-upgradeaccount.png)
+{{< image src="pkdd-interstitial-upgradeaccount.png" class="col-10 col-md-7" wrapper="text-center" title="A sample interstitial with the title: Faster, safer sign-in with passkeys, with the passkey icon to the left. Below is text that reads: You can now sign into this site using your face, fingerprint, or device PIN! Under that is a button that says create a passkey and a link that says not now.">}}
 
 > Consider showing (or linking to) longer descriptions explaining that all users that are able to unlock the current device will be able to access the account at the relying party to ensure that the user is giving fully informed consent.
 
@@ -198,7 +202,7 @@ navigator.credentials.create({
 })
 ```
 
-> [!INFO] A note on attestation
+> [!NOTE] A note on attestation
 > We recommend that most relying parties not specify the attestation conveyance parameter `attestation` (thus defaulting to none), or instead explicitly use the value `indirect`. This guarantees the most streamlined user experience (platforms are likely to obtain consent from the user for other types of attestation conveyances, which likely results in a larger fraction of unsuccessful credential creations due to users canceling the creation).
 
 When the WebAuthn call resolves, send the response to your server and associate the returned public key and credential ID with the previously authenticated user account.

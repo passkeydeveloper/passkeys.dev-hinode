@@ -2,3 +2,5 @@
     languageName = "English"
     contentDir = "content/en"
     weight = 1
+    [en.params.head]
+        tagline = "Passkeys Developer Resources"

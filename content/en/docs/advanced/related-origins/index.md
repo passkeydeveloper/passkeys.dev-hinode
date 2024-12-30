@@ -124,7 +124,6 @@ Below are three examples of origin lists and their respective label counts.
   {{< /nav-item >}}
 {{< /nav >}}
 
-
 ## Requirements
 
 ### Client Support
@@ -149,6 +148,7 @@ Below is an example for the RP ID `shopping.com`.
 
 {{< nav type="tabs" id="tabs-1" >}}
   {{< nav-item header="https://shopping.com/.well-known/webauthn" show="true" >}}
+
 ```json
 {
   "origins": [
@@ -179,12 +179,12 @@ It is recommended to pick the most commonly used and/or understood domain for th
 
 For deployments where passkeys are already rolled out with multiple RP IDs, there are some unique considerations and requirements.
 
-__Considerations__
+**Considerations**
 
 - Users with a passkey for the "local" RP ID / origin will be able to use all passkeys experiences as normal.
 - Users with a passkey for another RP ID / related origin, will require an identifier first flow and a backend lookup.
 
-__Requirements__
+**Requirements**
 
 - Each existing RP ID will need to host the WebAuthn well-known document, with all of the other origins listed in it. This will allow reciprocal use of passkeys
 - The account database will need to know which RP ID was used for each passkey (this could be an explicit property or inferred based on other data)
@@ -215,6 +215,4 @@ A user with a passkey for `shopping.co.uk` has traveled to the US and navigates 
 
 ## Additional Information
 
-{{< button color="secondary" tooltip="Go to the WebAuthn specification reference" href="https://w3c.github.io/webauthn/#sctn-related-origins" >}}
-    WebAuthn Spec Reference
-{{< /button >}}
+{{< button color="light" size="sm" icon="fas fa-circle-info" cue=false order="first" tooltip="Go to reference in the WebAuthn specification" href="https://w3c.github.io/webauthn/#sctn-related-origins" >}}WebAuthn Spec Reference{{< /button >}}

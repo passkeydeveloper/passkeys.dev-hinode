@@ -1,8 +1,13 @@
-baseURL = 'https://hinode.passkeys.dev/'
+baseURL = 'https://passkeys.dev/'
 languageCode = 'en-us'
 title = 'passkeys.dev'
 
-enableGitInfo = false
+enableGitInfo = true
+enableRobotsTXT = true
+
+
+[build]
+  writeStats = true
 
 [[module.imports]]
-path = 'github.com/gethinode/hinode'
+  path = 'github.com/gethinode/hinode'

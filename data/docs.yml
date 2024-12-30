@@ -23,6 +23,13 @@
 
 - title: Reference
   pages:
+    - title: Android
+    - title: "iOS & iPadOS"
+      link: iOS
+    - title: Chrome OS
+      link: chromeos
+    - title: macOS
+    - title: Windows
     - title: Known Issues
     - title: Specifications
       link: specs
